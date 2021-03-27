@@ -1,0 +1,16 @@
+---
+
+- name: This is the demo of Variable 
+  hosts: localhost
+  become: yes 
+  user: ubuntu 
+  vars:
+    motdvar: Hello variable
+
+  tasks:
+    - name: we are copy content using the variable 
+      copy:
+        content: "{{ motdvar }}"
+        dest: /etc/motd
+
+

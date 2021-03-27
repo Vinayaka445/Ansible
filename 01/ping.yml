@@ -1,0 +1,8 @@
+---
+- name: Test ping example 
+  hosts: localhost
+  connection: local
+
+  tasks: 
+  - name: ping 
+    ping:

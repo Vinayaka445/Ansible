@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  user: ubuntu
+  become: yes
+  gather_facts: false 
+
+  tasks:
+    - name: Copy content module, we can copy content to any file 
+      copy: 
+        content: Testing content module 
+        dest: /etc/motd
+
+

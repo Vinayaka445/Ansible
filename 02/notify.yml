@@ -1,0 +1,23 @@
+--- 
+  - hosts: localhost 
+    user: ubuntu
+    gather_facts: false 
+    become: true
+  
+    vars:
+      motd: testing  notidy 
+
+    tasks: 
+      - name: We will modidy motd file once its done we will use the notify 
+        copy: 
+          content: "{{ motd }}"
+          dest: /etc/motd
+        notify : MOTD
+
+    handlers:
+      - name: MOTD
+        debug:
+          msg: motd file is updated 
+
+
+
