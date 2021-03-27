@@ -1,0 +1,15 @@
+---
+- name: Copy module of MOTD 
+  hosts: localhost
+  user: ubuntu
+ # become_user: root
+  gather_facts: false 
+  sudo: yes
+
+  tasks:
+    - name: Copy command
+      copy:
+        src: motd 
+        dest: /etc/motd
+
+
